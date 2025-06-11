@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmc63bgsrd23r"]
+
+[ext_resource type="Texture2D" uid="uid://do5e0wt2dg0e7" path="res://Imagenes/Mapa.png" id="1_2s6uq"]
+[ext_resource type="Script" path="res://Scripts/mapa.gd" id="1_lbisp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvw5x"]
+bg_color = Color(0, 0, 0, 0.65098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su62r"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Mapa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbisp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2s6uq")
+expand_mode = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 537.0
+offset_right = 706.0
+offset_bottom = 643.0
+theme_override_constants/separation = 15
+
+[node name="Arena" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvw5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_su62r")
+text = "   ARENA   "
+
+[node name="Taberna" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvw5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_su62r")
+text = "   TABERNA   "
+
+[node name="Herreria" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvw5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_su62r")
+text = "   HERRERIA   "
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 529.0
+offset_right = 1142.0
+offset_bottom = 635.0
+
+[node name="Personaje" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvw5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_su62r")
+text = "    PERSONAJE   "
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 233.0
+offset_bottom = 121.0
+
+[node name="Salir" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvw5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_su62r")
+text = "   SALIR   "
+
+[node name="BoxContainer4" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 7.0
+offset_right = 1140.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="Oro" type="Label" parent="BoxContainer4"]
+layout_mode = 2
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="BoxContainer/Arena" to="." method="_on_arena_pressed"]
+[connection signal="pressed" from="BoxContainer/Taberna" to="." method="_on_taberna_pressed"]
+[connection signal="pressed" from="BoxContainer/Herreria" to="." method="_on_herreria_pressed"]
+[connection signal="pressed" from="BoxContainer2/Personaje" to="." method="_on_personaje_pressed"]
+[connection signal="pressed" from="BoxContainer3/Salir" to="." method="_on_salir_pressed"]

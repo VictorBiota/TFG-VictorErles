@@ -1,0 +1,247 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx07waxvxr8cy"]
+
+[ext_resource type="Script" path="res://Scripts/arena.gd" id="1_cly78"]
+[ext_resource type="Texture2D" uid="uid://1lgcdsn3i340" path="res://Imagenes/PeleaArena.png" id="1_mfjoe"]
+[ext_resource type="Texture2D" uid="uid://c3qvwfe533n4y" path="res://Imagenes/pergamino.png" id="2_5e0h2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5oraa"]
+bg_color = Color(0, 0, 0, 0.686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7upe4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkmph"]
+bg_color = Color(0.665976, 0.119353, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geegm"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wv5g"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Arena" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cly78")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mfjoe")
+expand_mode = 1
+
+[node name="Pergamino1" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 150.0
+offset_right = 353.0
+offset_bottom = 615.0
+texture = ExtResource("2_5e0h2")
+expand_mode = 1
+
+[node name="BoxContainer1" type="BoxContainer" parent="Fondo/Pergamino1"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 285.0
+offset_bottom = 390.0
+
+[node name="info1" type="Label" parent="Fondo/Pergamino1/BoxContainer1"]
+custom_minimum_size = Vector2(230, 330)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 3
+clip_text = true
+
+[node name="Pergamino2" type="TextureRect" parent="Fondo"]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 149.0
+offset_right = 1131.0
+offset_bottom = 614.0
+texture = ExtResource("2_5e0h2")
+expand_mode = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="Fondo/Pergamino2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 285.0
+offset_bottom = 390.0
+
+[node name="Info2" type="Label" parent="Fondo/Pergamino2/BoxContainer2"]
+custom_minimum_size = Vector2(230, 330)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " "
+
+[node name="BoxContainer" type="BoxContainer" parent="Fondo"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 174.0
+offset_right = 770.0
+offset_bottom = 252.0
+theme_override_constants/separation = 100
+
+[node name="Pelear" type="Button" parent="Fondo/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5oraa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7upe4")
+text = "   PELEAR   "
+
+[node name="Atras" type="Button" parent="Fondo/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5oraa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7upe4")
+text = "   ATRAS   "
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 505.0
+offset_bottom = 103.0
+theme_override_styles/background = SubResource("StyleBoxFlat_tkmph")
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 54.0
+offset_right = 1111.0
+offset_bottom = 102.0
+theme_override_styles/background = SubResource("StyleBoxFlat_tkmph")
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 447.0
+offset_top = 311.0
+offset_right = 723.0
+offset_bottom = 488.0
+theme_override_constants/separation = 15
+vertical = true
+
+[node name="Atacar" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geegm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wv5g")
+text = "  ATACAR  "
+
+[node name="Esquivar" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geegm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wv5g")
+text = "  ESQUIAVAR  "
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 470.0
+offset_top = 306.0
+offset_right = 703.0
+offset_bottom = 384.0
+theme_override_constants/separation = 100
+
+[node name="Subir Nivel" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5oraa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7upe4")
+text = "   SUBIR NIVEL   "
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 491.0
+offset_top = 501.0
+offset_right = 724.0
+offset_bottom = 579.0
+theme_override_constants/separation = 100
+
+[node name="Salir" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5oraa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7upe4")
+text = "   SALIR   "
+
+[node name="Muerte" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Muerte"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "Has muerto en combate"
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Muerte"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Ok" type="Button" parent="Muerte/BoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="Terminar" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Terminar"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "Acabaste con todos los gladiadores de la arena.
+Felicidades!!"
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Terminar"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Ok2" type="Button" parent="Terminar/BoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Fondo/BoxContainer/Pelear" to="." method="_on_pelear_pressed"]
+[connection signal="pressed" from="Fondo/BoxContainer/Atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="BoxContainer3/Atacar" to="." method="_on_atacar_pressed"]
+[connection signal="pressed" from="BoxContainer3/Esquivar" to="." method="_on_esquivar_pressed"]
+[connection signal="pressed" from="BoxContainer/Subir Nivel" to="." method="_on_subir_nivel_pressed"]
+[connection signal="pressed" from="BoxContainer2/Salir" to="." method="_on_salir_pressed"]
+[connection signal="close_requested" from="Muerte" to="." method="_on_muerte_close_requested"]
+[connection signal="pressed" from="Muerte/BoxContainer/Ok" to="." method="_on_ok_pressed"]
+[connection signal="close_requested" from="Terminar" to="." method="_on_terminar_close_requested"]
+[connection signal="pressed" from="Terminar/BoxContainer/Ok2" to="." method="_on_ok_2_pressed"]

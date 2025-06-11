@@ -1,0 +1,230 @@
+[gd_scene load_steps=7 format=3 uid="uid://yparmuk16bl8"]
+
+[ext_resource type="Script" path="res://Scripts/subir_nivel.gd" id="1_hm7p8"]
+[ext_resource type="Texture2D" uid="uid://dcylq0rxr4msh" path="res://Imagenes/creacionpersonaje.png" id="2_c57es"]
+[ext_resource type="Texture2D" uid="uid://csb5pc3i2svjk" path="res://Imagenes/botonAmarillo.png" id="3_2bjat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nukti"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cnoy"]
+bg_color = Color(0, 0, 0, 0.686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yd0v"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CreacionPersonaje" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hm7p8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c57es")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -18.0
+offset_right = -645.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.999466)
+texture = ExtResource("3_2bjat")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -18.0
+offset_right = -645.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.999466)
+texture = ExtResource("3_2bjat")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 147.0
+offset_right = -645.0
+offset_bottom = -231.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2bjat")
+expand_mode = 1
+
+[node name="BoxContainerAtributos" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 384.0
+offset_right = 407.0
+offset_bottom = 521.0
+theme_override_constants/separation = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="BoxContainerAtributos"]
+layout_mode = 2
+vertical = true
+
+[node name="Label" type="Label" parent="BoxContainerAtributos/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "FUERZA"
+
+[node name="Label2" type="Label" parent="BoxContainerAtributos/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "VITALIDAD"
+
+[node name="Label3" type="Label" parent="BoxContainerAtributos/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "AGILIDAD"
+
+[node name="Restar" type="BoxContainer" parent="BoxContainerAtributos"]
+layout_mode = 2
+theme_override_constants/separation = 14
+vertical = true
+
+[node name="RestarFuerza" type="Button" parent="BoxContainerAtributos/Restar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "-"
+
+[node name="RestarVitalidad" type="Button" parent="BoxContainerAtributos/Restar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "-"
+
+[node name="RestarAgilidad" type="Button" parent="BoxContainerAtributos/Restar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "-"
+
+[node name="Atributos" type="BoxContainer" parent="BoxContainerAtributos"]
+layout_mode = 2
+vertical = true
+
+[node name="Fuerza" type="Label" parent="BoxContainerAtributos/Atributos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Vitalidad" type="Label" parent="BoxContainerAtributos/Atributos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Agilidad" type="Label" parent="BoxContainerAtributos/Atributos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Sumar" type="BoxContainer" parent="BoxContainerAtributos"]
+layout_mode = 2
+theme_override_constants/separation = 14
+vertical = true
+
+[node name="SumarFuerza" type="Button" parent="BoxContainerAtributos/Sumar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "+"
+
+[node name="SumarVitalidad" type="Button" parent="BoxContainerAtributos/Sumar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "+"
+
+[node name="SumarAgilidad" type="Button" parent="BoxContainerAtributos/Sumar"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_nukti")
+text = "+"
+
+[node name="PuntosDisonibles" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 257.0
+offset_right = 445.0
+offset_bottom = 297.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PuntosDisonibles"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PUNTOS DISPONIBLES"
+
+[node name="Disponibles" type="Label" parent="PuntosDisonibles"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "5"
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 524.0
+offset_right = 1099.0
+offset_bottom = 573.0
+theme_override_constants/separation = 15
+
+[node name="Subir Nivel" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2cnoy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yd0v")
+text = "   SUBIR NIVEL   "
+
+[node name="Window" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Window"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "Tienes puntos sin gastar"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="BoxContainerAtributos/Restar/RestarFuerza" to="." method="_on_restar_fuerza_pressed"]
+[connection signal="pressed" from="BoxContainerAtributos/Restar/RestarVitalidad" to="." method="_on_restar_vitalidad_pressed"]
+[connection signal="pressed" from="BoxContainerAtributos/Restar/RestarAgilidad" to="." method="_on_restar_agilidad_pressed"]
+[connection signal="pressed" from="BoxContainerAtributos/Sumar/SumarFuerza" to="." method="_on_sumar_fuerza_pressed"]
+[connection signal="pressed" from="BoxContainerAtributos/Sumar/SumarVitalidad" to="." method="_on_sumar_vitalidad_pressed"]
+[connection signal="pressed" from="BoxContainerAtributos/Sumar/SumarAgilidad" to="." method="_on_sumar_agilidad_pressed"]
+[connection signal="pressed" from="BoxContainer3/Subir Nivel" to="." method="_on_subir_nivel_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

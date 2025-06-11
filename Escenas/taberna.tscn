@@ -1,0 +1,172 @@
+[gd_scene load_steps=6 format=3 uid="uid://bebis7smgqidi"]
+
+[ext_resource type="Script" path="res://Scripts/taberna.gd" id="1_sftx0"]
+[ext_resource type="Texture2D" uid="uid://tij8o7xpsdl0" path="res://Imagenes/taberna.png" id="2_q8y7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpjle"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6vvl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eomon"]
+bg_color = Color(0.665976, 0.119353, 0, 1)
+
+[node name="Taberna" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sftx0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q8y7a")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 2
+offset_left = 516.0
+offset_top = 542.0
+offset_right = 1083.0
+offset_bottom = 605.0
+theme_override_constants/separation = 15
+
+[node name="Descansar" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjle")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b6vvl")
+text = "  DESCANSAR  "
+
+[node name="Dormir" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjle")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b6vvl")
+text = " DORMIR  "
+
+[node name="Salir" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjle")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b6vvl")
+text = "  SALIR  "
+
+[node name="Popup Descansar" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Popup Descansar"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "¿Quieres recuperar un 15% de tu vida? 30 oro"
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Popup Descansar"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Si Descansar" type="Button" parent="Popup Descansar/BoxContainer"]
+layout_mode = 2
+text = "SI"
+
+[node name="No Descansar" type="Button" parent="Popup Descansar/BoxContainer"]
+layout_mode = 2
+text = "NO"
+
+[node name="Popup Dormir" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Popup Dormir"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "¿Quieres curarte toda la vida? 100 oro"
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Popup Dormir"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Si Dormir" type="Button" parent="Popup Dormir/BoxContainer"]
+layout_mode = 2
+text = "SI"
+
+[node name="No Dormir" type="Button" parent="Popup Dormir/BoxContainer"]
+layout_mode = 2
+text = "NO"
+
+[node name="BoxContainer4" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 7.0
+offset_right = 1140.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="Oro" type="Label" parent="BoxContainer4"]
+layout_mode = 2
+
+[node name="Sin oro" type="Window" parent="."]
+title = "Error"
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+
+[node name="Sin oro" type="Label" parent="Sin oro"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No tienes oro suficiente"
+autowrap_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 505.0
+offset_bottom = 103.0
+theme_override_styles/background = SubResource("StyleBoxFlat_eomon")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="BoxContainer3/Descansar" to="." method="_on_descansar_pressed"]
+[connection signal="pressed" from="BoxContainer3/Dormir" to="." method="_on_dormir_pressed"]
+[connection signal="pressed" from="BoxContainer3/Salir" to="." method="_on_salir_pressed"]
+[connection signal="close_requested" from="Popup Descansar" to="." method="_on_popup_descansar_close_requested"]
+[connection signal="pressed" from="Popup Descansar/BoxContainer/Si Descansar" to="." method="_on_si_descansar_pressed"]
+[connection signal="pressed" from="Popup Descansar/BoxContainer/No Descansar" to="." method="_on_no_descansar_pressed"]
+[connection signal="close_requested" from="Popup Dormir" to="." method="_on_popup_dormir_close_requested"]
+[connection signal="pressed" from="Popup Dormir/BoxContainer/Si Dormir" to="." method="_on_si_dormir_pressed"]
+[connection signal="pressed" from="Popup Dormir/BoxContainer/No Dormir" to="." method="_on_no_dormir_pressed"]
+[connection signal="close_requested" from="Sin oro" to="." method="_on_sin_oro_close_requested"]

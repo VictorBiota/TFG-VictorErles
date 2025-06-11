@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjpey5s7tira"]
+
+[ext_resource type="Texture2D" uid="uid://1lgcdsn3i340" path="res://Imagenes/PeleaArena.png" id="1_iwrjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsnap"]
+bg_color = Color(0.665976, 0.119353, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jb2c"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw3rn"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iwrjg")
+expand_mode = 1
+
+[node name="BoxContainer1" type="BoxContainer" parent="Fondo"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 197.0
+offset_right = 364.0
+offset_bottom = 527.0
+
+[node name="info1" type="Label" parent="Fondo/BoxContainer1"]
+visible = false
+custom_minimum_size = Vector2(230, 330)
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 193.0
+offset_right = 1068.0
+offset_bottom = 523.0
+
+[node name="info2" type="Label" parent="BoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(230, 330)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 505.0
+offset_bottom = 103.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fsnap")
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 54.0
+offset_right = 1111.0
+offset_bottom = 102.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fsnap")
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 559.0
+offset_right = 933.0
+offset_bottom = 623.0
+theme_override_constants/separation = 15
+
+[node name="Crear" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jb2c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3rn")
+text = "  ATACAR  "
+
+[node name="Atras" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jb2c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3rn")
+text = "  DEFENDER  "
+
+[node name="Atras2" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8jb2c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3rn")
+text = "  ESQUIAVAR  "

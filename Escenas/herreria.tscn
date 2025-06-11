@@ -1,0 +1,255 @@
+[gd_scene load_steps=10 format=3 uid="uid://dadmgjh782rhb"]
+
+[ext_resource type="Script" path="res://Scripts/herreria.gd" id="1_fmyie"]
+[ext_resource type="Texture2D" uid="uid://pojxp68llkdl" path="res://Imagenes/herrero.png" id="2_skrf0"]
+[ext_resource type="Texture2D" uid="uid://jcjlm2yq6pun" path="res://Imagenes/espada.png" id="3_u7wdt"]
+[ext_resource type="Texture2D" uid="uid://by3s1g3r86oqb" path="res://Imagenes/casco.png" id="4_c7aaf"]
+[ext_resource type="Texture2D" uid="uid://2qk2gqnllo2g" path="res://Imagenes/piernas.png" id="5_bmlpk"]
+[ext_resource type="Texture2D" uid="uid://b0cvi0yb2e1e2" path="res://Imagenes/pecho.png" id="5_lcryb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5glec"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dm1m"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7x6p"]
+
+[node name="Herreria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fmyie")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_skrf0")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 565.0
+offset_right = 390.0
+offset_bottom = 628.0
+theme_override_constants/separation = 15
+
+[node name="Comprar" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5glec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8dm1m")
+text = " COMPRAR "
+
+[node name="Salir" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5glec")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8dm1m")
+text = "  SALIR  "
+
+[node name="Espada" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 741.0
+offset_top = 55.0
+offset_right = 871.0
+offset_bottom = 195.0
+texture = ExtResource("3_u7wdt")
+expand_mode = 1
+flip_h = true
+
+[node name="Pechera" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 716.0
+offset_top = 381.0
+offset_right = 869.0
+offset_bottom = 561.0
+texture = ExtResource("5_lcryb")
+expand_mode = 1
+
+[node name="Piernas" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 935.0
+offset_top = 373.0
+offset_right = 1087.0
+offset_bottom = 556.0
+texture = ExtResource("5_bmlpk")
+expand_mode = 1
+
+[node name="Casco" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 961.0
+offset_top = 69.0
+offset_right = 1058.0
+offset_bottom = 183.0
+texture = ExtResource("4_c7aaf")
+expand_mode = 1
+
+[node name="BoxContainer5" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 7.0
+offset_right = 1140.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="Oro" type="Label" parent="BoxContainer5"]
+layout_mode = 2
+
+[node name="ButtonEspada" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 48.0
+offset_right = 882.0
+offset_bottom = 200.0
+
+[node name="ButtonCasco" type="Button" parent="."]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 59.0
+offset_right = 1075.0
+offset_bottom = 195.0
+
+[node name="ButtonPechera" type="Button" parent="."]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 372.0
+offset_right = 885.0
+offset_bottom = 572.0
+
+[node name="ButtonPiernas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 368.0
+offset_right = 1080.0
+offset_bottom = 564.0
+
+[node name="LabelEspada" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 735.0
+offset_top = 173.0
+offset_right = 883.0
+offset_bottom = 285.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7x6p")
+
+[node name="LabelCasco" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 936.0
+offset_top = 172.0
+offset_right = 1084.0
+offset_bottom = 286.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7x6p")
+
+[node name="LabelArmadura" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 718.0
+offset_top = 511.0
+offset_right = 866.0
+offset_bottom = 643.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7x6p")
+
+[node name="LabelPiernas" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 938.0
+offset_top = 515.0
+offset_right = 1086.0
+offset_bottom = 642.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7x6p")
+
+[node name="Comprar" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Label" type="Label" parent="Comprar"]
+offset_right = 229.0
+offset_bottom = 49.0
+text = "¿Quieres comprar y quipar el item?"
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Comprar"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Si Comprar" type="Button" parent="Comprar/BoxContainer"]
+layout_mode = 2
+text = "SI"
+
+[node name="No Comprar" type="Button" parent="Comprar/BoxContainer"]
+layout_mode = 2
+text = "NO"
+
+[node name="Sin oro" type="Window" parent="."]
+auto_translate_mode = 1
+title = "Error"
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+
+[node name="Sin oro" type="Label" parent="Sin oro"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No tienes oro suficiente"
+autowrap_mode = 3
+
+[node name="Seleciona Item" type="Window" parent="."]
+auto_translate_mode = 1
+title = "Error"
+initial_position = 1
+size = Vector2i(250, 100)
+visible = false
+
+[node name="Seleciona Item" type="Label" parent="Seleciona Item"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Selecciona un item para comprar"
+autowrap_mode = 3
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="BoxContainer3/Comprar" to="." method="_on_comprar_pressed"]
+[connection signal="pressed" from="BoxContainer3/Salir" to="." method="_on_salir_pressed"]
+[connection signal="focus_entered" from="ButtonEspada" to="." method="_on_button_espada_focus_entered"]
+[connection signal="focus_exited" from="ButtonEspada" to="." method="_on_button_espada_focus_exited"]
+[connection signal="focus_entered" from="ButtonCasco" to="." method="_on_button_casco_focus_entered"]
+[connection signal="focus_exited" from="ButtonCasco" to="." method="_on_button_casco_focus_exited"]
+[connection signal="focus_entered" from="ButtonPechera" to="." method="_on_button_pechera_focus_entered"]
+[connection signal="focus_exited" from="ButtonPechera" to="." method="_on_button_pechera_focus_exited"]
+[connection signal="focus_entered" from="ButtonPiernas" to="." method="_on_button_piernas_focus_entered"]
+[connection signal="focus_exited" from="ButtonPiernas" to="." method="_on_button_piernas_focus_exited"]
+[connection signal="close_requested" from="Comprar" to="." method="_on_comprar_close_requested"]
+[connection signal="pressed" from="Comprar/BoxContainer/Si Comprar" to="." method="_on_si_comprar_pressed"]
+[connection signal="pressed" from="Comprar/BoxContainer/No Comprar" to="." method="_on_no_comprar_pressed"]
+[connection signal="close_requested" from="Sin oro" to="." method="_on_sin_oro_close_requested"]
+[connection signal="close_requested" from="Seleciona Item" to="." method="_on_seleciona_item_close_requested"]

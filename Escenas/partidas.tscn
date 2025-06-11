@@ -1,0 +1,175 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwbegwm5nbw1d"]
+
+[ext_resource type="Texture2D" uid="uid://opor6umge824" path="res://Imagenes/Partidas.png" id="1_0o0nq"]
+[ext_resource type="Script" path="res://Scripts/partidas.gd" id="1_icrut"]
+[ext_resource type="Texture2D" uid="uid://c3qvwfe533n4y" path="res://Imagenes/pergamino.png" id="2_xrrbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdscv"]
+bg_color = Color(0, 0, 0, 0.709804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6bor"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Partidas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icrut")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0o0nq")
+
+[node name="Pergamino2" type="TextureRect" parent="Fondo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = 60.0
+offset_right = 129.0
+offset_bottom = 387.0
+grow_horizontal = 2
+texture = ExtResource("2_xrrbi")
+expand_mode = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="Fondo/Pergamino2"]
+layout_mode = 2
+offset_left = 37.0
+offset_top = -38.0
+offset_right = 246.0
+offset_bottom = 378.0
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="Partida2" type="Button" parent="Fondo/Pergamino2/BoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "PARTIDA 2
+"
+
+[node name="Info2" type="Label" parent="Fondo/Pergamino2/BoxContainer2"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Borrar2" type="Button" parent="Fondo/Pergamino2/BoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "BORRAR"
+
+[node name="Pergamino3" type="TextureRect" parent="Fondo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 209.0
+offset_top = 60.0
+offset_right = 479.0
+offset_bottom = 387.0
+grow_horizontal = 2
+texture = ExtResource("2_xrrbi")
+expand_mode = 1
+
+[node name="BoxContainer3" type="BoxContainer" parent="Fondo/Pergamino3"]
+layout_mode = 2
+offset_left = 37.0
+offset_top = -38.0
+offset_right = 246.0
+offset_bottom = 378.0
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="Partida3" type="Button" parent="Fondo/Pergamino3/BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "PARTIDA 3
+"
+
+[node name="Info3" type="Label" parent="Fondo/Pergamino3/BoxContainer3"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Borrar3" type="Button" parent="Fondo/Pergamino3/BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "BORRAR"
+
+[node name="Pergamino1" type="TextureRect" parent="Fondo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -491.0
+offset_top = 60.0
+offset_right = -221.0
+offset_bottom = 387.0
+grow_horizontal = 2
+texture = ExtResource("2_xrrbi")
+expand_mode = 1
+
+[node name="BoxContainer1" type="BoxContainer" parent="Fondo/Pergamino1"]
+layout_mode = 2
+offset_left = 37.0
+offset_top = -38.0
+offset_right = 246.0
+offset_bottom = 378.0
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="Partida1" type="Button" parent="Fondo/Pergamino1/BoxContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "PARTIDA 1
+"
+
+[node name="Info1" type="Label" parent="Fondo/Pergamino1/BoxContainer1"]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Borrar1" type="Button" parent="Fondo/Pergamino1/BoxContainer1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "BORRAR"
+
+[node name="Atras" type="Button" parent="Fondo"]
+layout_mode = 2
+offset_left = 122.0
+offset_top = 561.0
+offset_right = 331.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdscv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6bor")
+text = "ATRAS"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Fondo/Pergamino2/BoxContainer2/Partida2" to="." method="_on_partida_2_pressed"]
+[connection signal="pressed" from="Fondo/Pergamino2/BoxContainer2/Borrar2" to="." method="_on_borrar_2_pressed"]
+[connection signal="pressed" from="Fondo/Pergamino3/BoxContainer3/Partida3" to="." method="_on_partida_3_pressed"]
+[connection signal="pressed" from="Fondo/Pergamino3/BoxContainer3/Borrar3" to="." method="_on_borrar_3_pressed"]
+[connection signal="pressed" from="Fondo/Pergamino1/BoxContainer1/Partida1" to="." method="_on_partida_1_pressed"]
+[connection signal="pressed" from="Fondo/Pergamino1/BoxContainer1/Borrar1" to="." method="_on_borrar_1_pressed"]
+[connection signal="pressed" from="Fondo/Atras" to="." method="_on_atras_pressed"]

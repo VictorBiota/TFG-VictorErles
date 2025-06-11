@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddn2apim80b0v"]
+
+[ext_resource type="AudioStream" uid="uid://c3spd2gff6gao" path="res://Music/medieval-ambient-236809.mp3" id="1_1ee4h"]
+[ext_resource type="Script" path="res://Scripts/musica.gd" id="2_82pdd"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_1ee4h")
+autoplay = true
+script = ExtResource("2_82pdd")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

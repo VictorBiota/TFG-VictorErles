@@ -1,0 +1,199 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2kioul45ji06"]
+
+[ext_resource type="Texture2D" uid="uid://dcylq0rxr4msh" path="res://Imagenes/creacionpersonaje.png" id="1_hh14q"]
+[ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_xdr50"]
+[ext_resource type="Texture2D" uid="uid://c3qvwfe533n4y" path="res://Imagenes/pergamino.png" id="2_k7mqq"]
+[ext_resource type="Texture2D" uid="uid://jcjlm2yq6pun" path="res://Imagenes/espada.png" id="4_casx6"]
+[ext_resource type="Texture2D" uid="uid://b0cvi0yb2e1e2" path="res://Imagenes/pecho.png" id="5_lr285"]
+[ext_resource type="Texture2D" uid="uid://2qk2gqnllo2g" path="res://Imagenes/piernas.png" id="6_aekvw"]
+[ext_resource type="Texture2D" uid="uid://by3s1g3r86oqb" path="res://Imagenes/casco.png" id="7_les7l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6go8u"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 0.788235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu41e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hjv5"]
+
+[node name="Personaje" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xdr50")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hh14q")
+expand_mode = 1
+
+[node name="Pergamino1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 404.0
+offset_bottom = 545.0
+texture = ExtResource("2_k7mqq")
+expand_mode = 1
+
+[node name="BoxContainer1" type="BoxContainer" parent="Pergamino1"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 285.0
+offset_bottom = 390.0
+
+[node name="info1" type="Label" parent="Pergamino1/BoxContainer1"]
+custom_minimum_size = Vector2(280, 370)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer3" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 559.0
+offset_right = 636.0
+offset_bottom = 622.0
+theme_override_constants/separation = 15
+
+[node name="Salir" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6go8u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nu41e")
+text = "  SALIR  "
+
+[node name="Espada" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 250.0
+offset_right = 792.0
+offset_bottom = 381.0
+texture = ExtResource("4_casx6")
+expand_mode = 1
+flip_h = true
+
+[node name="Pechera" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 814.0
+offset_top = 207.0
+offset_right = 997.0
+offset_bottom = 408.0
+texture = ExtResource("5_lr285")
+expand_mode = 1
+
+[node name="Piernas" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 799.0
+offset_top = 413.0
+offset_right = 1011.0
+offset_bottom = 648.0
+texture = ExtResource("6_aekvw")
+expand_mode = 1
+
+[node name="Casco" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 851.0
+offset_top = 82.0
+offset_right = 953.0
+offset_bottom = 189.0
+texture = ExtResource("7_les7l")
+expand_mode = 1
+
+[node name="BoxContainer4" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 16.0
+offset_right = 1137.0
+offset_bottom = 65.0
+theme_override_constants/separation = 15
+
+[node name="Oro" type="Label" parent="BoxContainer4"]
+layout_mode = 2
+
+[node name="ButtonEspada" type="Button" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 240.0
+offset_right = 804.0
+offset_bottom = 392.0
+
+[node name="ButtonCasco" type="Button" parent="."]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 66.0
+offset_right = 969.0
+offset_bottom = 202.0
+
+[node name="ButtonPechera" type="Button" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 204.0
+offset_right = 1006.0
+offset_bottom = 416.0
+
+[node name="ButtonPiernas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 417.0
+offset_right = 972.0
+offset_bottom = 647.0
+
+[node name="LabelEspada" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 652.0
+offset_top = 358.0
+offset_right = 800.0
+offset_bottom = 456.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjv5")
+
+[node name="LabelCasco" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 954.0
+offset_top = 83.0
+offset_right = 1102.0
+offset_bottom = 187.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjv5")
+
+[node name="LabelArmadura" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 981.0
+offset_top = 233.0
+offset_right = 1129.0
+offset_bottom = 348.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjv5")
+
+[node name="LabelPiernas" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 955.0
+offset_top = 443.0
+offset_right = 1103.0
+offset_bottom = 554.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjv5")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="BoxContainer3/Salir" to="." method="_on_salir_pressed"]
+[connection signal="focus_entered" from="ButtonEspada" to="." method="_on_button_espada_focus_entered"]
+[connection signal="focus_exited" from="ButtonEspada" to="." method="_on_button_espada_focus_exited"]
+[connection signal="focus_entered" from="ButtonCasco" to="." method="_on_button_casco_focus_entered"]
+[connection signal="focus_exited" from="ButtonCasco" to="." method="_on_button_casco_focus_exited"]
+[connection signal="focus_entered" from="ButtonPechera" to="." method="_on_button_pechera_focus_entered"]
+[connection signal="focus_exited" from="ButtonPechera" to="." method="_on_button_pechera_focus_exited"]
+[connection signal="focus_entered" from="ButtonPiernas" to="." method="_on_button_piernas_focus_entered"]
+[connection signal="focus_exited" from="ButtonPiernas" to="." method="_on_button_piernas_focus_exited"]
